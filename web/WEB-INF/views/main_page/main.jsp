@@ -21,8 +21,8 @@
 <section id="menuBar" class="menu-bar" style="">
 
     <ul style="text-align: right;">
-        <li><a href="#" style="font-size: 10pt">Login</a></li>
-        <li><a href="#" style="font-size: 10pt">Resister</a></li>
+        <li><a href="LoginForm" style="font-size: 10pt">Login</a></li>
+        <li><a href="JoinForm" style="font-size: 10pt">Resister</a></li>
     </ul>
 
     <a href="/"><img src="${PageContext.request.ContextPath}/resources/img/main_image/logo.png"/></a>

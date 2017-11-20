@@ -1,6 +1,5 @@
 package index_Controller;
 
-import database.Dao;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -10,7 +9,7 @@ import java.sql.SQLException;
 @Controller
 public class controller {
 
-    private Dao db = new Dao();
+    //private MemberDAO db = new MemberDAO();
 
     public controller() throws SQLException, ClassNotFoundException {
     }
@@ -25,13 +24,21 @@ public class controller {
         return "adapt_page/adapt";
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String login() {
-        return "member_page/login";
+    @RequestMapping(value = "/LoginForm", method = RequestMethod.GET)
+    public String loginForm() {
+        return "member_page/views/LoginForm";
+    }
+    @RequestMapping(value = "/LoginForm", method = RequestMethod.GET)
+    public String loginPro() {
+        return "member_page/pro/LoginPro";
     }
 
-    @RequestMapping(value = "/register", method = RequestMethod.GET)
-    public String register() {
-        return "member_page/register";
+    @RequestMapping(value = "/JoinForm", method = RequestMethod.GET)
+    public String joinForm() {
+        return "member_page/views/JoinForm";
+    }
+    @RequestMapping(value = "/JoinPro", method = RequestMethod.GET)
+    public String joinPro() {
+        return "member_page/pro/JoinPro";
     }
 }
