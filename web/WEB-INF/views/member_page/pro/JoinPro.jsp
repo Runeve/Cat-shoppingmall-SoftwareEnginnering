@@ -7,9 +7,8 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%-- 자바빈 클래스 import --%>
-<%@ page import="member.MemberBean" %>
-<%-- DAO import --%>
 <%@ page import="member.MemberDAO" %>
+<%-- DAO import --%>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -111,7 +110,7 @@
             <table>
                 <tr height="40">
                     <td>
-                        <a href="/"><img src="/resources/img/member_image/btn_home.PNG" width="120"/></a>
+                        <a href="/"><img src="/resources/img/member_image/btn_home.png" width="120"/></a>
                     </td>
                 </tr>
             </table>
