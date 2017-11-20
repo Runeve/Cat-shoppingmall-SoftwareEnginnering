@@ -17,7 +17,7 @@ public class controller {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index() {
-        return "main_page/index";
+        return "main_page/main";
     }
 
     @RequestMapping(value = "/adapt", method = RequestMethod.GET)
@@ -25,10 +25,13 @@ public class controller {
         return "adapt_page/adapt";
     }
 
-    @RequestMapping(value = "/show", method = RequestMethod.GET)
-    public String show() throws SQLException {
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String login() {
+        return "member_page/login";
+    }
 
-        db.showAllUser();
+    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    public String register() {
         return "member_page/register";
     }
 }
