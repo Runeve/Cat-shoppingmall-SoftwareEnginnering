@@ -1,0 +1,38 @@
+#endcover {
+    margin-top: 300px;
+    margin-bottom: 0px;
+    width: 100%;
+    height: 50px;
+    background-color: black;
+
+}
+
+#end {
+    width: 100%;
+    background-color: rgba(21, 20, 4, 0.48);
+    height: 200px;
+}
+
+#end article {
+    color: whitesmoke;
+    padding: 0px 20px 20px 20px;
+}
+
+#end article h2 {
+    text-align: left;
+    text-decoration: underline;
+}
+
+#end article a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+#end article a:hover {
+    color: #ffdce0;
+}
+
+#end article p {
+    text-align: right;
+    font-size: 10px;
+}
