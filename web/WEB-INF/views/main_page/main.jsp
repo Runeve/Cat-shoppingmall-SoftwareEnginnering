@@ -20,13 +20,26 @@
 <body>
 <section id="menuBar" class="menu-bar" style="">
 
+    <%
+        if (session.getAttribute("sessionID") == null) // 로그인이 안되었을 때
+        {
+    %>
     <ul style="text-align: right;">
         <li><a href="LoginForm" style="font-size: 10pt">Login</a></li>
         <li><a href="JoinForm" style="font-size: 10pt">Resister</a></li>
     </ul>
+    <%
+    } else // 로그인 했을 경우
+    {%>
+    <ul style="text-align: right;">
+        <li><p style="font-size: 8pt"><b><%=session.getAttribute("sessionName") %>
+        </b>님, 환영합니다!</p></li>
+        <li><a href="LogoutPro" style="font-size: 10pt">Logout</a></li>
+        <li><a href="LogoutPro" style="font-size: 10pt">Logout</a></li>
+    </ul>
+    <%}%>
 
     <a href="/"><img src="${PageContext.request.ContextPath}/resources/img/main_image/logo.png"/></a>
-
 
     <ul>
         <li><a href="adapt">입양</a></li>
