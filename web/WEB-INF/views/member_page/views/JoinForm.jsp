@@ -16,10 +16,24 @@
 <body>
 <section id="menuBar" class="menu-bar" style="">
 
+    <%
+        if (session.getAttribute("sessionID") == null) // 로그인이 안되었을 때
+        {
+    %>
     <ul style="text-align: right;">
         <li><a href="LoginForm" style="font-size: 10pt">Login</a></li>
         <li><a href="JoinForm" style="font-size: 10pt">Resister</a></li>
     </ul>
+    <%
+    } else // 로그인 했을 경우
+    {%>
+    <ul style="text-align: right;">
+        <li><p style="font-size: 8pt"><b><%=session.getAttribute("sessionName") %>
+        </b>님, 환영합니다!</p></li>
+        <li><a href="UserInfoForm" style="font-size: 10pt">My Page</a></li>
+        <li><a href="LogoutPro" style="font-size: 10pt">Logout</a></li>
+    </ul>
+    <%}%>
 
     <a href="/"><img src="${PageContext.request.ContextPath}/resources/img/main_image/logo.png"/></a>
 
@@ -62,7 +76,7 @@
                                 // JoinPro.jsp에서 이메일 체크 처리 결과에 따른 메시지를 보낸다.
                                 String msg = request.getParameter("msg");
                                 if (msg != null && msg.equals("0")) {
-                                    out.println("<font color='red' size='2'>이미 가입된 회원입니다.</font><br>");
+                                    out.println("<font color='red' size='1'>이미 가입된 회원입니다.</font><br>");
                                 }
                             %>
                         </td>

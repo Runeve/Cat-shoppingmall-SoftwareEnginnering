@@ -34,7 +34,7 @@
     <ul style="text-align: right;">
         <li><p style="font-size: 8pt"><b><%=session.getAttribute("sessionName") %>
         </b>님, 환영합니다!</p></li>
-        <li><a href="LogoutPro" style="font-size: 10pt">Logout</a></li>
+        <li><a href="UserInfoForm" style="font-size: 10pt">My Page</a></li>
         <li><a href="LogoutPro" style="font-size: 10pt">Logout</a></li>
     </ul>
     <%}%>
