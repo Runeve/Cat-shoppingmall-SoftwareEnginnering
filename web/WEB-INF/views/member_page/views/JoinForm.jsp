@@ -17,8 +17,8 @@
 <section id="menuBar" class="menu-bar" style="">
 
     <ul style="text-align: right;">
-        <li><a href="#" style="font-size: 10pt">Login</a></li>
-        <li><a href="#" style="font-size: 10pt">Resister</a></li>
+        <li><a href="LoginForm" style="font-size: 10pt">Login</a></li>
+        <li><a href="JoinForm" style="font-size: 10pt">Resister</a></li>
     </ul>
 
     <a href="/"><img src="${PageContext.request.ContextPath}/resources/img/main_image/logo.png"/></a>
@@ -39,17 +39,33 @@
 <section id="register" style="">
     <div style="margin-top: 200px">
         <center>
-            <form method="get" action="join">
+            <form method="get" action="JoinPro" onsubmit="return checkValue()" name="userInfo">
                 <table width="800">
                     <tr height="40">
                         <td align="center"><h1>[회원가입]</h1></td>
                     </tr>
                 </table>
-                <table width="700" height="600" cellpadding="0" style="border-collapse:collapse; font-size:9pt;">
+                <table width="500" height="100" cellpadding="0" style="border-collapse:collapse; font-size:9pt;">
                     <tr class="register" height="30">
                         <td width="5%" align="center">*</td>
                         <td width="15%">회원 이메일</td>
-                        <td><input type="text" name="email"/></td>
+                        <td width="40%">
+                            <input type="text" name="email1" size="8"/>@
+                            <select name="email2">
+                                <option>naver.com</option>
+                                <option>daum.net</option>
+                                <option>gmail.com</option>
+                                <option>nate.com</option>
+                            </select>
+                            <%
+                                // 이메일에 따른 계정이 이미 있을 경우
+                                // JoinPro.jsp에서 이메일 체크 처리 결과에 따른 메시지를 보낸다.
+                                String msg = request.getParameter("msg");
+                                if (msg != null && msg.equals("0")) {
+                                    out.println("<font color='red' size='2'>이미 가입된 회원입니다.</font><br>");
+                                }
+                            %>
+                        </td>
                     </tr>
                     <tr height="7">
                         <td colspan="3">
@@ -113,8 +129,8 @@
                 <br/>
                 <table>
                     <tr height="40">
-                        <td><input width="120" type="image" src="/resources/img/member_image/btn_register.PNG"/>&nbsp;<a
-                                href="/"><img src="/resources/img/member_image/btn_cancel.PNG" width="120"/></a>
+                        <td><input width="120" type="image" src="/resources/img/member_image/btn_join.png"/>&nbsp;<a
+                                href="/"><img src="/resources/img/member_image/btn_cancel.png" width="120"/></a>
                         </td>
                     </tr>
                 </table>
@@ -125,7 +141,7 @@
 
         // 필수 입력정보인 아이디, 비밀번호가 입력되었는지 확인하는 함수
         function checkValue() {
-            if (!document.userInfo.email.value) {
+            if (!document.userInfo.email1.value || !document.userInfo.email2.value) {
                 alert("아이디를 입력하세요.");
                 return false;
             }
@@ -153,6 +169,5 @@
         <p><b>이메일</b> gomyammi@naver.com</p>
     </article>
 </section>
-
 </body>
 </html>
